@@ -1,4 +1,4 @@
-## Dog Match 
+## HLPR
 <kbd align="center"> Amit Sheth, Marvin Lambert, and Estefani Baughman </kbd>
 
 <p align = "center">This project focus is to find people to help with everyday tasks. </br>
