@@ -1,3 +1,10 @@
+import Header from '../../components/Header/Header.jsx';
+
 export default function OfferDetail() {
-  return <div>OfferDetail</div>;
+  return (
+    <>
+      <Header />
+      <h3>OfferDetail</h3>
+    </>
+  );
 }

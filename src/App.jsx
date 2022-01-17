@@ -6,7 +6,7 @@ import OfferDetail from './views/OfferDetail/OfferDetail.jsx';
 import Profile from './views/Profile/Profile.jsx';
 import TaskDetail from './views/TaskDetail/TaskDetail.jsx';
 import TaskList from './views/TaskList/TaskList.jsx';
-import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+//import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export default function App() {
   return (
@@ -19,9 +19,9 @@ export default function App() {
           <Route exact path="/tasklist">
             <TaskList />
           </Route>
-          <PrivateRoute exact path="/profile">
+          <Route exact path="/profile">
             <Profile />
-          </PrivateRoute>
+          </Route>
           <Route exact path="/taskdetail/:id">
             <TaskDetail />
           </Route>
