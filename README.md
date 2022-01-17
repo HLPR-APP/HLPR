@@ -1,6 +1,8 @@
 ## HLPR
 <kbd align="center"> Amit Sheth, Marvin Lambert, and Estefani Baughman </kbd>
 
+<img align="center" alt="Logo" style= "width: 100%;" src= https://github.com/HLPR-APP/HLPR/blob/main/public/volodymyr-hryshchenko-KZocXyI3kRo-unsplash.jpg />
+
 <p align = "center">This project focus is to find people to help with everyday tasks. </br>
 Problem Domain: Hard to find good help. </br>
 How we are addressing this: Building an app to help people find verified helpers.</p>
