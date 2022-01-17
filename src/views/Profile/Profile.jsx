@@ -1,3 +1,12 @@
+import AddTaskForm from '../../components/AddTaskForm/AddTaskForm.jsx';
+import Header from '../../components/Header/Header.jsx';
+
 export default function Profile() {
-  return <div>Profile</div>;
+  return (
+    <>
+      <Header />
+      {/* hide form */}
+      <AddTaskForm />
+    </>
+  );
 }
