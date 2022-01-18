@@ -1,12 +1,3 @@
-HLPR/src/views/Login/Signup.jsx /
-@franklyhollywood
-franklyhollywood fixed login/signup logout
-Latest commit 40f0147 6 minutes ago
- History
- 2 contributors
-@franklyhollywood@AmitSheth9
-50 lines (48 sloc)  1.31 KB
-   
 import { useState } from 'react';
 import { useUser } from '../../context/UserContext.jsx';
 import { signUpUser } from '../../services/users.js';
@@ -57,4 +48,3 @@ export default function Signup() {
     </form>
   );
 }
-
