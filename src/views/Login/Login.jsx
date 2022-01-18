@@ -1,63 +1,57 @@
 import Header from '../../components/Header/Header.jsx';
-import {
-  FormControl,
-  FormLabel,
-  FormHelperText,
-  FormErrorMessage,
-  Input,
-  Button,
-  ButtonGroup,
-} from '@chakra-ui/react';
 import { useState } from 'react';
+import { signInUser } from '../../services/users.js';
+import { useUser } from '../../context/UserContext.jsx';
+import { useHistory } from 'react-router-dom';
+import { getTasksByUser } from '../../services/services.js';
+import { getTasksByEmail } from '../../services/services.js';
+import { getTaskById } from '../../services/services.js';
 
 export default function Login() {
- 
-
-  const isError = false;
-
-
-  const { setUser } = useUser();
+  const auth = useUser();
   const [email, setEmail] = useState('');
   const [pw, setPW] = useState('')
   
-
-
   const handleSubmit = async (e) => {
-    try{
+   
     e.preventDefault();
-    const userIn = await signUpUser(email, pw);
+    const userIn = await signInUser(email, pw)
     console.log(userIn);
+    auth.setUser({id: userIn.id, email: userIn.email})
+    console.log(auth.user);
+   
     console.log('hello')
-    
-    } catch (error){
-
+    history.replace('/profile');
+  
   }
-}
+ 
+
+
   return (
-    <>
-      <Header />
-      <form>
-      <FormControl m="10" >
-        <FormLabel htmlFor="email">Email</FormLabel>
-        <Input
+    
+    <div> {auth.user.email ? <p>Logged in as {auth.user.email}</p> :  ''}
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='email'>Email
+            <input 
+        
           id="email"
           type="email"
           value={email}
-          onChange={(e) =>setEmail(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         />
-        <FormLabel htmlFor="password">Password</FormLabel>
-        <Input
+        </label>
+        <label htmlFor='password'>Password
+            <input 
           id="password"
           type="password"
           value={pw}
           onChange={(e) => setPW(e.target.value)}
         />
-        <Button mt="2" colorScheme="teal" size="sm" type='submit'>
-          Submit
-        </Button>
-        
-      </FormControl>
-      </form>
-    </>
+        </label>
+        <button type='submit'>Submit</button>
+        </form>
+         
+    </div>
   );
 }
+
