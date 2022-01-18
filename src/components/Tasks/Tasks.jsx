@@ -7,7 +7,7 @@ export default function Tasks({ tasks }) {
   console.log(tasks);
 
   return (
-    <Box >
+    <Box>
       <Flex direction="row" wrap="wrap" p="5" margin="10px" padding="10px">
         {tasks.map((task) => (
           <div key={task.id}>
