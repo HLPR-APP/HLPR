@@ -3,7 +3,6 @@
 import { client, parseData } from './client';
 
 // get all tasks
-
 export async function getAllTasks() {
   const request = await client.from('Tasks2').select('*');
   return parseData(request);
@@ -11,7 +10,7 @@ export async function getAllTasks() {
 
 //get task by Id
 export async function getTaskById(id) {
-  const request = await client.from('Tasks2').select('*').eq('task_id', id);
+  const request = await client.from('Tasks2').select('*').eq('id', id);
   return parseData(request);
 }
 
