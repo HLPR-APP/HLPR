@@ -38,7 +38,7 @@ export default function TaskBox({ task }) {
             </Box>
           </Box>
           <Button size="xs" margin="2" colorScheme="blue">
-            <Link to={`/taskdetail/${task.id}}`}>
+            <Link to={`/taskdetail/${task.id}`}>
               <Box
                 mt="1"
                 fontWeight="semibold"

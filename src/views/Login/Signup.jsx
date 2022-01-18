@@ -15,16 +15,6 @@ export default function Signup() {
       const userIn = await signUpUser(email, pw);
       console.log(userIn);
       console.log('hello');
-<<<<<<< HEAD
-    } catch (error) {}
-  };
-  return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email
-          <input
-=======
     } catch (error) {
       console.log(error);
     }
@@ -35,34 +25,20 @@ export default function Signup() {
         <FormLabel htmlFor="email">
           Email
           <Input
->>>>>>> 40f0147 (fixed login/signup logout)
             id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-<<<<<<< HEAD
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-=======
         </FormLabel>
         <FormLabel htmlFor="password">
           Password
           <Input
->>>>>>> 40f0147 (fixed login/signup logout)
             id="password"
             type="password"
             value={pw}
             onChange={(e) => setPW(e.target.value)}
           />
-<<<<<<< HEAD
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </>
-=======
         </FormLabel>
         <Button type="submit">Submit</Button>
         <p>
@@ -70,6 +46,5 @@ export default function Signup() {
         </p>
       </FormControl>
     </form>
->>>>>>> 40f0147 (fixed login/signup logout)
   );
 }

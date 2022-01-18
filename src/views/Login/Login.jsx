@@ -21,17 +21,6 @@ export default function Login() {
     console.log(auth.user);
 
     console.log('hello');
-<<<<<<< HEAD
-    history.push('/tasklist');
-  };
-
-  return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          Email
-          <input
-=======
     history.push('/TaskList');
   };
 
@@ -41,34 +30,20 @@ export default function Login() {
         <FormLabel htmlFor="email">
           Email
           <Input
->>>>>>> 40f0147 (fixed login/signup logout)
             id="email"
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-<<<<<<< HEAD
-        </label>
-        <label htmlFor="password">
-          Password
-          <input
-=======
         </FormLabel>
         <FormLabel htmlFor="password">
           Password
           <Input
->>>>>>> 40f0147 (fixed login/signup logout)
             id="password"
             type="password"
             value={pw}
             onChange={(e) => setPW(e.target.value)}
           />
-<<<<<<< HEAD
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-=======
         </FormLabel>
         <Button type="submit">Submit</Button>
         <p>
@@ -79,6 +54,5 @@ export default function Login() {
         </p>
       </FormControl>
     </form>
->>>>>>> 40f0147 (fixed login/signup logout)
   );
 }
