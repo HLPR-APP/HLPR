@@ -33,7 +33,7 @@ const NavLink = ({ children }) => (
   </Link>
 );
 
-export default function Nav() {
+export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
