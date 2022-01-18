@@ -10,7 +10,11 @@ export async function getAllTasks() {
 
 //get task by Id
 export async function getTaskById(id) {
+<<<<<<< HEAD
   const request = await client.from('Tasks2').select('*').eq('id', id);
+=======
+  const request = await client.from('Tasks2').select('*').eq('task_id', id);
+>>>>>>> 40f0147 (fixed login/signup logout)
   return parseData(request);
 }
 

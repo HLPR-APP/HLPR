@@ -1,9 +1,8 @@
-import { ReactNode } from 'react';
 import {
   Box,
   Flex,
   Avatar,
-  Link,
+  // Link,
   Button,
   Menu,
   MenuButton,
@@ -17,6 +16,10 @@ import {
   Center,
 } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { useUser } from '../../context/UserContext.jsx';
+import { Link } from 'react-router-dom';
+import { signOutUser } from '../../services/users.js';
+import { useHistory } from 'react-router-dom';
 
 const NavLink = ({ children }) => (
   <Link
@@ -36,6 +39,32 @@ const NavLink = ({ children }) => (
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  // export default function HeaderLogin({ loggedin }) {
+  const { user, setUser } = useUser();
+  const history = useHistory();
+
+  const handleLogOut = async () => {
+    await signOutUser();
+    setUser(null);
+    history.push('/');
+  };
+
+  const loggedin = user ? true : false;
+
+  const loggedInDiv = (
+    <Box>
+      {user?.email} <Button onClick={handleLogOut}>sign out</Button>
+    </Box>
+  );
+
+  const notLoggedInDiv = (
+    <Box>
+      {/* <p>Not Signed in</p> */}
+      <Link to="/">Sign In</Link>
+    </Box>
+  );
+
   return (
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -70,14 +99,17 @@ export default function Header() {
                     />
                   </Center>
                   <br />
-                  <Center>
-                    <p>Username</p>
-                  </Center>
+                  <Center>{user?.email && <p>{user.email}</p>}</Center>
                   <br />
                   <MenuDivider />
+                  {user?.email && (
+                    <MenuItem onClick={handleLogOut}>sign out</MenuItem>
+                  )}
+                  {!loggedin && notLoggedInDiv}
+                  {/* <MenuItem>{loggedin ? loggedInDiv : notLoggedInDiv}</MenuItem> */}
                   <MenuItem>Your Servers</MenuItem>
                   <MenuItem>Account Settings</MenuItem>
-                  <MenuItem>Logout</MenuItem>
+                  {/* <MenuItem>Logout</MenuItem> */}
                 </MenuList>
               </Menu>
             </Stack>
