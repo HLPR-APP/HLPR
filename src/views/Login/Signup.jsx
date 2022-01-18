@@ -1,35 +1,29 @@
 import Header from '../../components/Header/Header.jsx';
 import { useState } from 'react';
-import { signInUser } from '../../services/users.js';
 import { useUser } from '../../context/UserContext.jsx';
-import { useHistory } from 'react-router-dom';
-import { getTasksByUser } from '../../services/services.js';
-import { getTasksByEmail } from '../../services/services.js';
-import { getTaskById } from '../../services/services.js';
+import { signUpUser } from '../../services/users.js';
 
-export default function Login() {
-  const auth = useUser();
+export default function Signup() {
+  const { setUser } = useUser();
   const [email, setEmail] = useState('');
   const [pw, setPW] = useState('')
-  
+  const [input, setInput] = useState('');
+
+
   const handleSubmit = async (e) => {
-   
+    try{
     e.preventDefault();
-    const userIn = await signInUser(email, pw)
+    const userIn = await signUpUser(email, pw);
     console.log(userIn);
-    auth.setUser({id: userIn.id, email: userIn.email})
-    console.log(auth.user);
-   
     console.log('hello')
-    history.replace('/profile');
-  
-  }
- 
-
-
-  return (
     
-    <div> {auth.user.email ? <p>Logged in as {auth.user.email}</p> :  ''}
+    } catch (error){
+
+  }
+}
+  return (
+    <>
+      <Header />
       <form onSubmit={handleSubmit}>
         <label htmlFor='email'>Email
             <input 
@@ -50,8 +44,7 @@ export default function Login() {
         </label>
         <button type='submit'>Submit</button>
         </form>
-         
-    </div>
+
+    </>
   );
 }
-

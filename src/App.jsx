@@ -6,6 +6,7 @@ import OfferDetail from './views/OfferDetail/OfferDetail.jsx';
 import Profile from './views/Profile/Profile.jsx';
 import TaskDetail from './views/TaskDetail/TaskDetail.jsx';
 import TaskList from './views/TaskList/TaskList.jsx';
+import Signup from './views/Login/Signup.jsx';
 //import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export default function App() {
@@ -13,7 +14,10 @@ export default function App() {
     <UserProvider>
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/signup">
+            <Signup />
+          </Route>
+          <Route path="/">
             <Login />
           </Route>
           <Route exact path="/tasklist">
