@@ -9,7 +9,6 @@ import styles from './Profile.css';
 
 export default function Profile() {
   const auth = useUser();
-
   const [userTasks, setUserTasks] = useState([]);
   const [offers, setOffers] = useState([]);
   useEffect(() => {
