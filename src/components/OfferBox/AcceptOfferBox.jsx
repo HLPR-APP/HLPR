@@ -13,6 +13,7 @@ export default function AcceptOfferBox({offer}) {
         console.log(response);
         const returned = await updateOfferAccepted(offerID);
         console.log(returned);
+        window.location.reload();
         } catch (err) {
         console.log(err.message);
         }
@@ -48,10 +49,14 @@ export default function AcceptOfferBox({offer}) {
               Price: {offer.price}
             </Box>
           </Box>
-
+        {!offer.accepted ? 
           <Button onClick={()=>handleAcceptOffer(offer.Tasks2.id, offer.id)} size="md" margin="2" colorScheme="blue">
               Accept Offer
           </Button>
+          : 
+          <Badge borderRadius="full" px="2" colorScheme="teal">
+              Offer Accepted
+            </Badge>}
           <Box>
             <Box as="span" color="gray.600" fontSize="sm"></Box>
           </Box>
