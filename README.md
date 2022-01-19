@@ -40,4 +40,4 @@ Database Schemas:
 <li>Tables: Users, Tasks w/primary key and foreign key for user auth table, Offers w/foreign key for tasks and foreign key for users </li>
 </ul>
 
-<span> Planning on Miro: https://miro.com/app/board/uXjVOV9Debo=/?invite_link_id=155435545598 <span>
+<kbd> Planning on Miro: https://miro.com/app/board/uXjVOV9Debo=/?invite_link_id=155435545598 <kbd>
