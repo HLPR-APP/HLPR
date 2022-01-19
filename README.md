@@ -32,10 +32,10 @@ To Run locally: </br>
   <li> Run npm start </li> 
 </ol> 
  </br>
-Endpoints: Get, Post, Put, Delete using Supabase </br>
+Endpoints: Create, Read, Update, Delete using Supabase </br>
 
 Database Schemas:
 <ul>
 <li>Supabase </li>
-<li>Tables: Users, Tasks </li>
+<li>Tables: Users, Tasks w/primary key and foreign key for user auth table, Offers w/foreign key for tasks and foreign key for users </li>
 </ul>
