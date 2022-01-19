@@ -9,7 +9,7 @@ import styles from './Profile.css'
 
 export default function Profile() {
   const auth = useUser();
-  console.log(auth.user.email);
+  
   const [userTasks, setUserTasks] = useState([]);
   const [offers, setOffers] = useState([]);
   useEffect(() => {
