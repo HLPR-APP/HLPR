@@ -1,3 +1,4 @@
+import { Flex } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import AddTaskForm from '../../components/AddTaskForm/AddTaskForm.jsx';
 import { getTasksByUser } from '../../services/services.js';
@@ -19,7 +20,7 @@ export default function Profile() {
   const [userTasks, setUserTasks] = useState([]);
   const [offers, setOffers] = useState([]);
   const [offered, setOffered] = useState([]);
-  
+
   useEffect(() => {
     const onMount = async () => {
       const data = await getTasksByEmail(auth.user.email);
@@ -27,36 +28,31 @@ export default function Profile() {
       const returnedOffers = await getOffersByTaskEmail(auth.user.email);
       console.log('offers', returnedOffers);
       setOffers(returnedOffers);
-      const userOffers = await getOffersByUser(auth.user.email)
+      const userOffers = await getOffersByUser(auth.user.email);
       setOffered(userOffers);
       console.log(userOffers);
     };
     onMount();
   }, []);
 
- 
-  
   return (
     <>
-      <AddTaskForm /><br/><br/>
-
+      <AddTaskForm />
+      <br />
+      <br />
       Your Offers:
-      
       {offers.map((offer) => (
         <AcceptOfferBox key={offer.id} offer={offer} />
-        ))}<br/>
+      ))}
+      <br />
       Your Tasks...
-      
       {userTasks.map((task) => (
         <ProfileTaskBox key={task.id} task={task} />
       ))}
-
-    
-        <div>Offers you have made...</div>
-        {offered.map((offer) => (
+      <div>Offers you have made...</div>
+      {offered.map((offer) => (
         <OfferBox key={offer.id} offer={offer} />
-        ))}
-      
+      ))}
     </>
   );
 }
