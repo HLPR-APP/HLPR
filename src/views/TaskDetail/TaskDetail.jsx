@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { getTaskById } from '../../services/services.js';
 import TaskBox from '../../components/TaskBox/TaskBox';
 import { Button } from '@chakra-ui/react';
