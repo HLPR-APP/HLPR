@@ -2,14 +2,15 @@ import { Box, Badge, Image, Button } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { updateOfferAccepted } from '../../services/services';
 import { updateAcceptTask } from '../../services/services';
+import { useUser } from '../../context/UserContext';
 
 export default function AcceptOfferBox({offer}) {
-    
+    const auth = useUser();
     const handleAcceptOffer = async (taskID, offerID) => {
         try{
         console.log(taskID);
-        const response = await updateAcceptTask(taskID);
-        //console.log(response);
+        const response = await updateAcceptTask(auth.user.email, taskID);
+        console.log(response);
         const returned = await updateOfferAccepted(offerID);
         console.log(returned);
         } catch (err) {

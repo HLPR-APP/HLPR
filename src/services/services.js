@@ -53,11 +53,12 @@ export async function AddTask(email, taskname, description, imageURL) {
   return parseData(request);
 }
 
-export async function updateAcceptTask(taskID) {
+export async function updateAcceptTask( email, taskID) {
   const request = await client
   .from('Tasks2')
   .update({accepted_offer: true })
-  .match({id: taskID })
+  .match({id: taskID, posted_by: email })
+  console.log(request);
   return parseData(request);
 }
 
