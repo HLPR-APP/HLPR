@@ -42,9 +42,7 @@ export default function Profile() {
       <br />
       Your Offers:
       {offers.map((offer) => (
-        <Flex direction="right">
-          <AcceptOfferBox key={offer.id} offer={offer} />
-        </Flex>
+        <AcceptOfferBox key={offer.id} offer={offer} />
       ))}
       <br />
       Your Tasks...
