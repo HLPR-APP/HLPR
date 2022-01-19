@@ -27,6 +27,7 @@ export default function TaskDetail() {
         <Button>
           <a href="/tasklist"> Back to Tasks List </a>{' '}
         </Button>
+        <Button m="4">Make an Offer</Button>
       </Center>
     </>
   );
