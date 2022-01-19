@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getTaskById } from '../../services/services.js';
 import TaskBox from '../../components/TaskBox/TaskBox';
-import { Button } from '@chakra-ui/react';
+import { Button, Center } from '@chakra-ui/react';
 
 export default function TaskDetail() {
   const { id } = useParams();
@@ -23,9 +23,11 @@ export default function TaskDetail() {
   return (
     <>
       {loading ? <h3>Loading</h3> : <TaskBox task={task} />}
-      <Button>
-        <a href="/tasklist"> Back to Tasks List </a>{' '}
-      </Button>
+      <Center>
+        <Button>
+          <a href="/tasklist"> Back to Tasks List </a>{' '}
+        </Button>
+      </Center>
     </>
   );
 }
