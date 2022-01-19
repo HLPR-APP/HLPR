@@ -61,6 +61,7 @@ export default function CaptionCarousel() {
 
   return (
     <Box
+      mt="12"
       position={'relative'}
       height={'600px'}
       width={'full'}
@@ -89,7 +90,7 @@ export default function CaptionCarousel() {
         zIndex={2}
         onClick={() => slider?.slickPrev()}
       >
-        <BiLeftArrowAlt size="40px" />
+        <BiLeftArrowAlt size="20px" />
       </IconButton>
       {/* Right Icon */}
       <IconButton
@@ -102,7 +103,7 @@ export default function CaptionCarousel() {
         zIndex={2}
         onClick={() => slider?.slickNext()}
       >
-        <BiRightArrowAlt size="40px" />
+        <BiRightArrowAlt size="20px" />
       </IconButton>
       {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
