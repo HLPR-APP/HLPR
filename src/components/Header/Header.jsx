@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   Avatar,
-  // Link,
   Button,
   Menu,
   MenuButton,
@@ -21,20 +20,20 @@ import { Link } from 'react-router-dom';
 import { signOutUser } from '../../services/users.js';
 import { useHistory } from 'react-router-dom';
 
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'none',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}
-  >
-    {children}
-  </Link>
-);
+// const NavLink = ({ children }) => (
+//   <Link
+//     px={2}
+//     py={1}
+//     rounded={'md'}
+//     _hover={{
+//       textDecoration: 'none',
+//       bg: useColorModeValue('gray.200', 'gray.700'),
+//     }}
+//     href={'#'}
+//   >
+//     {children}
+//   </Link>
+// );
 
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
