@@ -27,6 +27,14 @@ export async function getTasksByEmail(email) {
   const request = await client
     .from('Tasks2')
     .select('*')
-    .match({ posted_by: email });
+    .eq('posted_by', email );
+  return parseData(request);
+}
+
+export async function getOffersByTaskEmail(email) {
+  const request = await client
+    .from('Offers2')
+    .select('*, Tasks2 (*)')
+    .eq('task_email', email)
   return parseData(request);
 }
