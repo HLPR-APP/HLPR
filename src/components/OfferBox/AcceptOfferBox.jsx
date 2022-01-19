@@ -26,7 +26,7 @@ export default function AcceptOfferBox({offer}) {
         borderRadius="lg"
         overflow="hidden"
         fit="cover"
-      ><Badge borderRadius="full" px="2" colorScheme="teal">
+      ><Badge borderRadius="full" px="2" colorScheme="teal" fontSize='md'>
         
        {offer.Tasks2.name}
       </Badge>
@@ -40,15 +40,15 @@ export default function AcceptOfferBox({offer}) {
               color="gray.500"
               fontWeight="semibold"
               letterSpacing="wide"
-              fontSize="xs"
+              fontSize="sm"
               textTransform="uppercase"
               ml="2"
             >
               Price: {offer.price}
             </Box>
           </Box>
-          
-          <Button onClick={()=>handleAcceptOffer(offer.Tasks2.id, offer.id)} size="xs" margin="2" colorScheme="blue">
+
+          <Button onClick={()=>handleAcceptOffer(offer.Tasks2.id, offer.id)} size="md" margin="2" colorScheme="blue">
               Accept Offer
           </Button>
           <Box>

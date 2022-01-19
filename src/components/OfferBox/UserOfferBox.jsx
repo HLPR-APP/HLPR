@@ -19,7 +19,7 @@ export default function UserOfferBox({offer}) {
         borderRadius="lg"
         overflow="hidden"
         fit="cover"
-      ><Badge borderRadius="full" px="2" colorScheme="teal">
+      ><Badge borderRadius="full" px="2" colorScheme="teal" fontSize='md'>
         
        {offer.Tasks2.name}
       </Badge>
@@ -33,15 +33,15 @@ export default function UserOfferBox({offer}) {
               color="gray.500"
               fontWeight="semibold"
               letterSpacing="wide"
-              fontSize="xs"
+              fontSize="sm"
               textTransform="uppercase"
               ml="2"
             >
               Price: {offer.price}
             </Box>
             {offer.accepted ? <Box
-              color="gray.500"
-              fontWeight="semibold"
+              color="teal.500"
+              fontWeight="bold"
               letterSpacing="wide"
               fontSize="xs"
               textTransform="uppercase"
@@ -50,17 +50,17 @@ export default function UserOfferBox({offer}) {
               Status: Offer Accepted
             </Box> :
             <Box
-            color="gray.500"
-            fontWeight="semibold"
+            color="teal.500"
+            fontWeight="bold"
             letterSpacing="wide"
-            fontSize="xs"
+            fontSize="sm"
             textTransform="uppercase"
             ml="2"
           >
             Status: Not Accepted
           </Box>}
           </Box>
-          <Button onClick={()=>removeOffer(offer.id)} size="xs" margin="2" colorScheme="blue">
+          <Button onClick={()=>removeOffer(offer.id)} size="sm" margin="2" colorScheme="blue">
               Remove Offer
           </Button>
           <Box>
