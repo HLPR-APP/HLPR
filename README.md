@@ -1,5 +1,6 @@
 ## HLPR
-<kbd align="center"> Amit Sheth, Marvin Lambert, and Estefani Baughman </kbd>
+<kbd align="center"> Amit Sheth, Marvin Lambert, and Estefani Baughman </kbd> <br>
+<br>
 <span> Planning on Miro: https://miro.com/app/board/uXjVOV9Debo=/?invite_link_id=155435545598 <span>
 
 <img align="center" alt="Logo" style= "width: 100%, height: 50%;"  src= https://github.com/HLPR-APP/HLPR/blob/main/public/volodymyr-hryshchenko-KZocXyI3kRo-unsplash.jpg />
