@@ -1,0 +1,9 @@
+.offer_container {
+    background-color: beige;
+    border: 5px solid brown;
+    width: 33%;
+}
+.offer_detail {
+    color: brown;
+    border: 2px brown;
+}
