@@ -19,6 +19,11 @@ export default function Signup() {
       console.log(error);
     }
   };
+
+  const emailNotice = () => {
+    alert('Please check your email for confirmation email');
+  };
+
   return (
     <form onSubmit={handleSubmit}>
       <FormControl>
@@ -40,9 +45,14 @@ export default function Signup() {
             onChange={(e) => setPW(e.target.value)}
           />
         </FormLabel>
-        <Button type="submit">Submit</Button>
+        <Button type="submit" onClick={emailNotice}>
+          Submit
+        </Button>
         <p>
-          Have an account?<a href="/">Sign in</a>
+          Have an account?
+          <Button>
+            <a href="/">Sign in</a>
+          </Button>
         </p>
       </FormControl>
     </form>
