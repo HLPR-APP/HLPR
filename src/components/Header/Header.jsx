@@ -103,12 +103,20 @@ export default function Header() {
                   <br />
                   <MenuDivider />
                   {user?.email && (
-                    <MenuItem onClick={handleLogOut}>sign out</MenuItem>
+                    <MenuItem onClick={handleLogOut}>Sign Out</MenuItem>
                   )}
                   {!loggedin && notLoggedInDiv}
                   {/* <MenuItem>{loggedin ? loggedInDiv : notLoggedInDiv}</MenuItem> */}
-                  <MenuItem>Your Servers</MenuItem>
-                  <MenuItem>Account Settings</MenuItem>
+                  {/* <MenuItem>Your Servers</MenuItem> */}
+                  {user?.email && (
+                    <MenuItem>
+                      <Link to="/profile">Profile</Link>
+                    </MenuItem>
+                  )}
+                  <MenuDivider />
+                  <MenuItem>
+                    <Link to="/aboutus">About Us</Link>
+                  </MenuItem>
                   {/* <MenuItem>Logout</MenuItem> */}
                 </MenuList>
               </Menu>
