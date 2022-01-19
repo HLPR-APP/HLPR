@@ -69,7 +69,11 @@ export default function Header() {
     <>
       <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
-          <Box>HLPR</Box>
+          <Box>
+            <Button>
+              <Link to="/tasklist">HLPR</Link>
+            </Button>
+          </Box>
 
           <Flex alignItems={'center'}>
             <Stack direction={'row'} spacing={7}>
