@@ -50,6 +50,7 @@ export default function ProfileTaskBox({ task }) {
             >
               Description: {task.description}
             </Box>
+           
           </Box>
           <Button size="xs" margin="2" colorScheme="blue">
             <Link to={`/taskdetail/${task.id}`}>
@@ -72,7 +73,14 @@ export default function ProfileTaskBox({ task }) {
           >
             Remove Task
           </Button>
+          
           <Box>
+          {task.accepted_offer ? (
+            <Badge borderRadius="full" px="2" colorScheme="teal">
+              Offer Accepted
+            </Badge> )
+             :
+            <Badge></Badge>}
             <Box as="span" color="gray.600" fontSize="sm"></Box>
           </Box>
         </Box>
