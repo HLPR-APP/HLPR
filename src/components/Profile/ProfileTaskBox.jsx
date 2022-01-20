@@ -1,7 +1,9 @@
-import { Box, Badge, Image, Button } from '@chakra-ui/react';
+import { Flex, Box, Badge, Image, Button } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 //import { StarIcon } from '@chakra-ui/icons';
 import { deleteTaskById } from '../../services/services';
+import { deleteUnacceptedOffers } from '../../services/services';
 
 export default function ProfileTaskBox({ task }) {
   const removeTask = async (taskID) => {
@@ -14,10 +16,20 @@ export default function ProfileTaskBox({ task }) {
       //can we delete offers with it?
     }
   };
+  
+  useEffect(() => {
+      const deleteBadOffers = async () =>{
+        if(task.accepted_offer === true) {
+        const response = await deleteUnacceptedOffers(task.id)
+        console.log('response', response)
+        }
+    }
+  
+  deleteBadOffers()}, [])
 
-  console.log(task);
   return (
     <>
+    
       <Box
         maxW="sm"
         minW="sm"
@@ -25,6 +37,7 @@ export default function ProfileTaskBox({ task }) {
         borderRadius="lg"
         overflow="hidden"
         fit="cover"
+        m="2"
       >
         <Image
           minW="sm"
@@ -34,7 +47,6 @@ export default function ProfileTaskBox({ task }) {
           src={task.image_url}
           alt={task.name}
         />
-
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             <Badge borderRadius="full" px="2" colorScheme="teal">
@@ -85,6 +97,7 @@ export default function ProfileTaskBox({ task }) {
           </Box>
         </Box>
       </Box>
+      
     </>
   );
 }

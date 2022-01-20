@@ -1,4 +1,4 @@
-import { Box, Badge, Image, Button, Flex, Center } from '@chakra-ui/react';
+import { Box, Badge, Image, Button, Flex, Center, HStack } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { updateOfferAccepted } from '../../services/services';
 import { updateAcceptTask } from '../../services/services';
@@ -21,6 +21,7 @@ export default function AcceptOfferBox({ offer }) {
 
   return (
     <>
+    
       <Flex direction="horizontal" align="center">
         <Box
           maxW="sm"
@@ -29,6 +30,7 @@ export default function AcceptOfferBox({ offer }) {
           borderRadius="lg"
           overflow="hidden"
           fit="cover"
+          m="2"
         >
           <Badge
             borderRadius="full"
@@ -82,6 +84,7 @@ export default function AcceptOfferBox({ offer }) {
           </Box>
         </Box>
       </Flex>
+      
     </>
   );
 }

@@ -4,7 +4,9 @@ import { client, parseData } from './client';
 
 // get all tasks
 export async function getAllTasks() {
-  const request = await client.from('Tasks2').select('*');
+  const request = await client
+  .from('Tasks2')
+  .select('*')
   return parseData(request);
 }
 
@@ -96,4 +98,12 @@ export async function addOffer(email, id, posted_by, price) {
       price: price,
     });
   return parseData(request);
+}
+
+export async function deleteUnacceptedOffers(taskID){
+  const request = await client
+  .from('Offers2')
+  .delete()
+  .match({task_id: taskID, accepted: false })
+
 }

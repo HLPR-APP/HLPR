@@ -1,4 +1,4 @@
-import { Flex, Center, Badge } from '@chakra-ui/react';
+import { Flex, Center, Badge, Button, HStack } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import AddTaskForm from '../../components/AddTaskForm/AddTaskForm.jsx';
 import { getTasksByUser } from '../../services/services.js';
@@ -14,6 +14,7 @@ import ProfileTaskBox from '../../components/Profile/ProfileTaskBox.jsx';
 import { deleteOfferByID } from '../../services/services.js';
 import OfferBox from '../../components/OfferBox/UserOfferBox.jsx';
 import AcceptOfferBox from '../../components/OfferBox/AcceptOfferBox.jsx';
+import { deleteUnacceptedOffers } from '../../services/services.js';
 
 export default function Profile() {
   const auth = useUser();
@@ -42,26 +43,28 @@ export default function Profile() {
       <br />
       <Center>
         <Badge fontSize="md" colorScheme="gray">
-          OFFERS ON MY TASKS:
+          OFFERS ON {auth.user.email}'s TASKS:
         </Badge>
       </Center>
       <Center>
-        <Flex direction="rows" p="10">
+      
+        <Flex direction="rows" p="10" wrap='wrap'>
           {offers.map((offer) => (
             <AcceptOfferBox key={offer.id} offer={offer} />
           ))}
         </Flex>
+        
       </Center>
       <br />
 
       <Center>
         <Badge fontSize="md" colorScheme="gray">
-          YOUR TASKS:
+          {auth.user.email}'s TASKS:
         </Badge>
       </Center>
 
       <Center>
-        <Flex direction="rows" pl="10" p="10">
+        <Flex direction="rows" pl="10" p="10" wrap='wrap'>
           {userTasks.map((task) => (
             <ProfileTaskBox key={task.id} task={task} />
           ))}
@@ -69,11 +72,11 @@ export default function Profile() {
       </Center>
       <Center>
         <Badge fontSize="md" colorScheme="gray">
-          OFFERS YOU HAVE MADE:
+          OFFERS {auth.user.email} HAS MADE:
         </Badge>
       </Center>
       <Center>
-        <Flex direction="rows" pl="10" p="10">
+        <Flex direction="rows" pl="10" p="10" wrap='wrap'>
           {offered.map((offer) => (
             <OfferBox key={offer.id} offer={offer} />
           ))}

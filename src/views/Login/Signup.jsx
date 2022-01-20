@@ -32,7 +32,7 @@ export default function Signup() {
       alert('Please check your email for a confirmation email');
       console.log(userIn);
     } catch (error) {
-      console.log(error);
+      alert(error.message);
     }
   };
 
@@ -113,6 +113,7 @@ export default function Signup() {
                       placeholder="Enter 6 characters"
                       required={true}
                       id="password"
+                      type='password'
                       value={pw}
                       onChange={(e) => setPW(e.target.value)}
                     />

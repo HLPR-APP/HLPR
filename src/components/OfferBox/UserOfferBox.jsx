@@ -18,6 +18,7 @@ export default function UserOfferBox({ offer }) {
         borderRadius="lg"
         overflow="hidden"
         fit="cover"
+        m="2"
       >
         <Badge
           borderRadius="full"
