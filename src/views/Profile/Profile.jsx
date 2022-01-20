@@ -1,4 +1,4 @@
-import { Flex, Center, Badge } from '@chakra-ui/react';
+import { Flex, Center, Badge, Button } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import AddTaskForm from '../../components/AddTaskForm/AddTaskForm.jsx';
 import { getTasksByUser } from '../../services/services.js';
@@ -14,6 +14,7 @@ import ProfileTaskBox from '../../components/Profile/ProfileTaskBox.jsx';
 import { deleteOfferByID } from '../../services/services.js';
 import OfferBox from '../../components/OfferBox/UserOfferBox.jsx';
 import AcceptOfferBox from '../../components/OfferBox/AcceptOfferBox.jsx';
+import { deleteUnacceptedOffers } from '../../services/services.js';
 
 export default function Profile() {
   const auth = useUser();

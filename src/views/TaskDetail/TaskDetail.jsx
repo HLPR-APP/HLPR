@@ -1,5 +1,6 @@
 import {
   Button,
+  Badge,
   Center,
   FormControl,
   FormLabel,
@@ -15,7 +16,7 @@ import { useHistory } from 'react-router-dom';
 
 export default function TaskDetail() {
   const { id } = useParams();
-  const [task, setTask] = useState(null);
+  const [task, setTask] = useState('');
   const [loading, setLoading] = useState(true);
   const [price, setPrice] = useState('');
   const history = useHistory();
@@ -41,10 +42,12 @@ export default function TaskDetail() {
     console.log(response);
     history.push('/profile');
   };
-
+  console.log(task.accepted_offer);
   return (
     <>
       {loading ? <h3>Loading</h3> : <TaskBox task={task} />}
+      {!task.accepted_offer ? (
+      <div>
       <Center>
         <Box
           m="2"
@@ -81,6 +84,14 @@ export default function TaskDetail() {
           </Center>
         </Box>
       </Center>
+      </div> 
+       ) : (
+      <Center>
+      <Badge>This task has been accepted, no more offers at this time</Badge><br/>
+      <Button mb="2">
+          <a href="/tasklist"> Back to Tasks List </a>
+      </Button>
+      </Center>)}
     </>
   );
 }
