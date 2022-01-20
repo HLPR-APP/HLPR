@@ -4,18 +4,16 @@ import { Link } from 'react-router-dom';
 import { deleteTaskById } from '../../services/services';
 
 export default function ProfileTaskBox({ task }) {
-
   const removeTask = async (taskID) => {
-    try{
-    const response = await deleteTaskById(taskID);
-    console.log(response);
-    window.location.reload();
-
-    } catch(err) {
-    alert('Offers pending, unable to remove')
-    //can we delete offers with it?
+    try {
+      const response = await deleteTaskById(taskID);
+      console.log(response);
+      window.location.reload();
+    } catch (err) {
+      alert('Offers pending, unable to remove');
+      //can we delete offers with it?
     }
-  }
+  };
 
   console.log(task);
   return (
@@ -31,6 +29,8 @@ export default function ProfileTaskBox({ task }) {
         <Image
           minW="sm"
           align="top center"
+          h="350"
+          w="350"
           src={task.image_url}
           alt={task.name}
         />
@@ -64,8 +64,13 @@ export default function ProfileTaskBox({ task }) {
               </Box>
             </Link>
           </Button>
-          <Button onClick={()=>removeTask(task.id)} size="xs" margin="2" colorScheme="blue">
-              Remove Task
+          <Button
+            onClick={() => removeTask(task.id)}
+            size="xs"
+            margin="2"
+            colorScheme="blue"
+          >
+            Remove Task
           </Button>
           <Box>
             <Box as="span" color="gray.600" fontSize="sm"></Box>

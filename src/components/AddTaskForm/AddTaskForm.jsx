@@ -57,7 +57,7 @@ export default function AddTaskForm() {
     //   <Button type="submit">Submit Task</Button>
     // </form>
 
-    <Stack minH={'40vh'} direction={{ base: 'column', md: 'row' }}>
+    <Stack minH={'20vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
           <Heading fontSize={'2xl'}>Create A Task</Heading>
@@ -106,6 +106,8 @@ export default function AddTaskForm() {
         <Image
           pr="10"
           pt="5"
+          h="400"
+          w="400"
           alt={'Login Image'}
           objectFit={'cover'}
           src={

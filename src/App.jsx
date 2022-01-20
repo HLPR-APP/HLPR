@@ -28,12 +28,9 @@ export default function App() {
           <PrivateRoute exact path="/profile">
             <Profile />
           </PrivateRoute>
-          <Route exact path="/taskdetail/:id">
+          <PrivateRoute exact path="/taskdetail/:id">
             <TaskDetail />
-          </Route>
-          <Route exact path="/offerdetail/:id">
-            <OfferDetail />
-          </Route>
+          </PrivateRoute>
           <Route exact path="/aboutus">
             <AboutUs />
           </Route>
