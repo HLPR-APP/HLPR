@@ -1,5 +1,3 @@
-//CRUD routes
-
 import { client, parseData } from './client';
 
 // get all tasks
@@ -24,6 +22,7 @@ export async function getTasksByUser(userId) {
     .eq('posted_by', userId);
   return parseData(request);
 }
+
 //get tasks by useremail from Tasks2
 export async function getTasksByEmail(email) {
   const request = await client
@@ -33,6 +32,7 @@ export async function getTasksByEmail(email) {
   return parseData(request);
 }
 
+//get offers by task email
 export async function getOffersByTaskEmail(email) {
   const request = await client
     .from('Offers2')
@@ -41,6 +41,7 @@ export async function getOffersByTaskEmail(email) {
   return parseData(request);
 }
 
+//get offers by user
 export async function getOffersByUser(email) {
   const request = await client
     .from('Offers2')
@@ -49,6 +50,7 @@ export async function getOffersByUser(email) {
   return parseData(request);
 }
 
+//add new task to database
 export async function AddTask(email, taskname, description, imageURL) {
   const request = await client
     .from('Tasks2')
@@ -61,15 +63,16 @@ export async function AddTask(email, taskname, description, imageURL) {
   return parseData(request);
 }
 
+//update db when task accepted
 export async function updateAcceptTask(email, taskID) {
   const request = await client
     .from('Tasks2')
     .update({ accepted_offer: true })
     .match({ id: taskID, posted_by: email });
-  console.log(request);
   return parseData(request);
 }
 
+//update db when offer accepted
 export async function updateOfferAccepted(offerID) {
   const request = await client
     .from('Offers2')
@@ -78,16 +81,19 @@ export async function updateOfferAccepted(offerID) {
   return parseData(request);
 }
 
+//delete task by id
 export async function deleteTaskById(taskID) {
   const request = await client.from('Tasks2').delete().match({ id: taskID });
   return parseData(request);
 }
 
+//delete offer by id
 export async function deleteOfferByID(offerID) {
   const request = await client.from('Offers2').delete().match({ id: offerID });
   return parseData(request);
 }
 
+//add offer to db
 export async function addOffer(email, id, posted_by, price) {
   const request = await client
     .from('Offers2')
@@ -100,10 +106,11 @@ export async function addOffer(email, id, posted_by, price) {
   return parseData(request);
 }
 
+//delete unused offers when other offer is accepted
 export async function deleteUnacceptedOffers(taskID){
   const request = await client
   .from('Offers2')
   .delete()
   .match({task_id: taskID, accepted: false })
-
+  return parseData(request);
 }

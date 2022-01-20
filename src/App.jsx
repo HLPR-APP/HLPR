@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { UserProvider } from './context/UserContext.jsx';
 import AboutUs from './views/AboutUs/AboutUs.jsx';
 import Login from './views/Login/Login.jsx';
-import OfferDetail from './views/OfferDetail/OfferDetail.jsx';
 import Profile from './views/Profile/Profile.jsx';
 import TaskDetail from './views/TaskDetail/TaskDetail.jsx';
 import TaskList from './views/TaskList/TaskList.jsx';

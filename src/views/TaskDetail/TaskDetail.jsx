@@ -39,10 +39,9 @@ export default function TaskDetail() {
       task.posted_by,
       price
     );
-    console.log(response);
     history.push('/profile');
   };
-  console.log(task.accepted_offer);
+
   return (
     <>
       {loading ? <h3>Loading</h3> : <TaskBox task={task} />}
@@ -87,10 +86,14 @@ export default function TaskDetail() {
       </div> 
        ) : (
       <Center>
-      <Badge>This task has been accepted, no more offers at this time</Badge><br/>
+        <Box>
+      <Badge m='2'>This task has been accepted. No more offers at this time</Badge><br/>
+        <Center>
       <Button mb="2">
           <a href="/tasklist"> Back to Tasks List </a>
       </Button>
+      </Center>
+      </Box>
       </Center>)}
     </>
   );

@@ -3,15 +3,12 @@ import {
   Badge,
   Image,
   Button,
-  Center,
   Flex,
   Spacer,
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-//import { StarIcon } from '@chakra-ui/icons';
 
 export default function TaskBox({ task }) {
-  console.log(task);
   return (
     <>
       <Flex align={'center'} justify={'center'}>
