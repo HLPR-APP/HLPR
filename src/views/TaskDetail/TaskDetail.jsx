@@ -57,16 +57,16 @@ export default function TaskDetail() {
         >
           <Center>
             <form onSubmit={handleSubmit}>
-              {/* <FormControl> */}
-              <Center>
-                <FormLabel htmlFor="price">Price $</FormLabel>
-              </Center>
-              <Input
-                id="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
-              />
-              {/* </FormControl> */}
+              <FormControl>
+                <Center>
+                  <FormLabel htmlFor="price">Price $</FormLabel>
+                </Center>
+                <Input
+                  id="price"
+                  value={price}
+                  onChange={(e) => setPrice(e.target.value)}
+                />
+              </FormControl>
               <Center>
                 <Button type="submit" mb="5" mt="2">
                   Add Offer
