@@ -3,7 +3,7 @@
 exports[`should render form 1`] = `
 <div>
   <div
-    class="chakra-stack css-1qghqig"
+    class="chakra-stack css-s9r9m8"
   >
     <div
       class="css-45tizf"
@@ -89,7 +89,7 @@ exports[`should render form 1`] = `
     >
       <img
         alt="Login Image"
-        class="chakra-image css-17n63z0"
+        class="chakra-image css-1g5dzi"
         src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
       />
     </div>

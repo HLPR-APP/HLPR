@@ -46,55 +46,59 @@ export default function TaskDetail() {
     <>
       {loading ? <h3>Loading</h3> : <TaskBox task={task} />}
       {!task.accepted_offer ? (
-      <div>
-      <Center>
-        <Box
-          m="2"
-          maxW="sm"
-          minW="sm"
-          borderWidth="10px"
-          borderRadius="lg"
-          overflow="hidden"
-          fit="cover"
-        >
+        <div>
           <Center>
-            <form onSubmit={handleSubmit}>
-              <FormControl>
-                <Center>
-                  <FormLabel htmlFor="price">Price $</FormLabel>
-                </Center>
-                <Input
-                  id="price"
-                  value={price}
-                  onChange={(e) => setPrice(e.target.value)}
-                />
-              </FormControl>
+            <Box
+              m="2"
+              maxW="sm"
+              minW="sm"
+              borderWidth="10px"
+              borderRadius="lg"
+              overflow="hidden"
+              fit="cover"
+            >
               <Center>
-                <Button type="submit" mb="5" mt="2">
-                  Add Offer
-                </Button>
+                <form onSubmit={handleSubmit}>
+                  <FormControl>
+                    <Center>
+                      <FormLabel htmlFor="price">Price $</FormLabel>
+                    </Center>
+                    <Input
+                      id="price"
+                      value={price}
+                      onChange={(e) => setPrice(e.target.value)}
+                    />
+                  </FormControl>
+                  <Center>
+                    <Button type="submit" mb="5" mt="2">
+                      Add Offer
+                    </Button>
+                  </Center>
+                  <Center>
+                    <Button mb="2">
+                      <a href="/tasklist"> Back to Tasks List </a>
+                    </Button>
+                  </Center>
+                </form>
               </Center>
-              <Center>
-                <Button mb="2">
-                  <a href="/tasklist"> Back to Tasks List </a>
-                </Button>
-              </Center>
-            </form>
+            </Box>
           </Center>
-        </Box>
-      </Center>
-      </div> 
-       ) : (
-      <Center>
-        <Box>
-      <Badge m='2'>This task has been accepted. No more offers at this time</Badge><br/>
+        </div>
+      ) : (
         <Center>
-      <Button mb="2">
-          <a href="/tasklist"> Back to Tasks List </a>
-      </Button>
-      </Center>
-      </Box>
-      </Center>)}
+          <Box>
+            <Badge m="2">
+              This task has been accepted. No more offers at this time
+            </Badge>
+            <br />
+            <Center>
+              <Button mb="2">
+                <a href="/tasklist"> Back to Tasks List </a>
+              </Button>
+            </Center>
+          </Box>
+        </Center>
+      )}
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { Box, Badge, Image, Button, Flex, Center, HStack } from '@chakra-ui/react';
+import { Box, Badge, Button, Flex, Center } from '@chakra-ui/react';
 import { updateOfferAccepted } from '../../services/services';
 import { updateAcceptTask } from '../../services/services';
 import { useUser } from '../../context/UserContext';
@@ -14,10 +14,9 @@ export default function AcceptOfferBox({ offer }) {
       console.log(err.message);
     }
   };
-
+  console.log(offer);
   return (
     <>
-    
       <Flex direction="horizontal" align="center">
         <Box
           maxW="sm"
@@ -80,7 +79,6 @@ export default function AcceptOfferBox({ offer }) {
           </Box>
         </Box>
       </Flex>
-      
     </>
   );
 }

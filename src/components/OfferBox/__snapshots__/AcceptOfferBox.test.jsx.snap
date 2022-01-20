@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render offer box 1`] = `
+<div>
+  <div
+    class="css-bcjp8t"
+  >
+    <div
+      class="css-60mfge"
+      fit="cover"
+    >
+      <span
+        class="chakra-badge css-gzm2p0"
+      >
+        Folding Laundry
+      </span>
+      <div
+        class="css-1vae7t2"
+      >
+        <div
+          class="css-x1sij0"
+        >
+          <span
+            class="chakra-badge css-1de82h4"
+          >
+            Offered By:
+            <br />
+            marvin_lambert@hotmail.com
+          </span>
+          <div
+            class="css-10cn095"
+          >
+            Price: $
+            40
+          </div>
+        </div>
+        <div
+          class="css-gmuwbf"
+        >
+          <button
+            class="chakra-button css-1y3eg1"
+            type="button"
+          >
+            Accept Offer
+          </button>
+        </div>
+        <div
+          class="css-0"
+        >
+          <span
+            class="css-bgvdb6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

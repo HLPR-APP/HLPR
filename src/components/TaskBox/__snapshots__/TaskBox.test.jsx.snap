@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render task box 1`] = `
+<div>
+  <div
+    class="css-gmuwbf"
+  >
+    <div
+      class="css-nm48wn"
+      fit="cover"
+    >
+      <img
+        alt="Buy HLPR App"
+        class="taskImg css-q9fgmq"
+        src="https://images.unsplash.com/photo-1585435465945-bef5a93f8849?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
+      />
+      <div
+        class="css-17xejub"
+      />
+      <div
+        class="css-1vae7t2"
+      >
+        <div
+          class="css-x1sij0"
+        >
+          <span
+            class="chakra-badge css-9doude"
+          >
+            Task Name: 
+            Buy HLPR App
+          </span>
+          <div
+            class="css-6xa8a5"
+          >
+            Description: 
+            Funding 
+          </div>
+        </div>
+        <button
+          class="chakra-button css-1sdsuwl"
+          type="button"
+        >
+          <a
+            href="/taskdetail/23"
+          >
+            <div
+              class="css-17xejub"
+            />
+            <h4
+              class="css-1u4mx17"
+            >
+              Select This Task
+            </h4>
+          </a>
+        </button>
+        <div
+          class="css-17xejub"
+        />
+        <div
+          class="css-0"
+        >
+          <span
+            class="css-bgvdb6"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
