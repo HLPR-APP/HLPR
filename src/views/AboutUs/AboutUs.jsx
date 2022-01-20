@@ -41,7 +41,7 @@ export default function CaptionCarousel() {
   const cards = [
     {
       title: 'Amit Sheth',
-      text: 'I need help with vegan meal prep',
+      text: 'I need help eating healthy, please bring me food.',
       image:
         'https://images.unsplash.com/photo-1564936281403-f92f66f89ee0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2525&q=80',
     },
@@ -67,7 +67,6 @@ export default function CaptionCarousel() {
       width={'full'}
       overflow={'hidden'}
     >
-      {/* CSS files for react-slick */}
       <link
         rel="stylesheet"
         type="text/css"
@@ -79,7 +78,6 @@ export default function CaptionCarousel() {
         type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"
       />
-      {/* Left Icon */}
       <IconButton
         aria-label="left-arrow"
         variant="ghost"
@@ -92,7 +90,6 @@ export default function CaptionCarousel() {
       >
         <BiLeftArrowAlt size="20px" />
       </IconButton>
-      {/* Right Icon */}
       <IconButton
         aria-label="right-arrow"
         variant="ghost"
@@ -105,7 +102,6 @@ export default function CaptionCarousel() {
       >
         <BiRightArrowAlt size="20px" />
       </IconButton>
-      {/* Slider */}
       <Slider {...settings} ref={(slider) => setSlider(slider)}>
         {cards.map((card, index) => (
           <Box
@@ -117,7 +113,6 @@ export default function CaptionCarousel() {
             backgroundSize="cover"
             backgroundImage={`url(${card.image})`}
           >
-            {/* This is the block you need to change, to customize the caption */}
             <Container size="container.lg" height="600px" position="relative">
               <Stack
                 spacing={6}

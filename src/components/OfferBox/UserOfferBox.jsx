@@ -1,11 +1,9 @@
 import { Box, Badge, Image, Button, Center } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
 import { deleteOfferByID } from '../../services/services';
 
 export default function UserOfferBox({ offer }) {
   const removeOffer = async (offerID) => {
     const response = await deleteOfferByID(offerID);
-    console.log(response);
     window.location.reload();
   };
 

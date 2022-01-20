@@ -1,10 +1,9 @@
-import { Box, Flex, Center } from '@chakra-ui/react';
+import { Box, Flex } from '@chakra-ui/react';
 import TaskBox from '../TaskBox/TaskBox.jsx';
 
 import React from 'react';
 
 export default function Tasks({ tasks }) {
-  console.log(tasks);
 
   return (
     <Box>

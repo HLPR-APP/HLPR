@@ -8,7 +8,6 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
-  useDisclosure,
   useColorModeValue,
   Stack,
   useColorMode,
@@ -20,26 +19,8 @@ import { Link } from 'react-router-dom';
 import { signOutUser } from '../../services/users.js';
 import { useHistory } from 'react-router-dom';
 
-// const NavLink = ({ children }) => (
-//   <Link
-//     px={2}
-//     py={1}
-//     rounded={'md'}
-//     _hover={{
-//       textDecoration: 'none',
-//       bg: useColorModeValue('gray.200', 'gray.700'),
-//     }}
-//     href={'#'}
-//   >
-//     {children}
-//   </Link>
-// );
-
 export default function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
-
-  // export default function HeaderLogin({ loggedin }) {
   const { user, setUser } = useUser();
   const history = useHistory();
 
@@ -58,8 +39,7 @@ export default function Header() {
   );
 
   const notLoggedInDiv = (
-    <Box>
-      {/* <p>Not Signed in</p> */}
+    <Box ml='3'>
       <Link to="/">Sign In</Link>
     </Box>
   );
@@ -113,8 +93,6 @@ export default function Header() {
                     <MenuItem onClick={handleLogOut}>Sign Out</MenuItem>
                   )}
                   {!loggedin && notLoggedInDiv}
-                  {/* <MenuItem>{loggedin ? loggedInDiv : notLoggedInDiv}</MenuItem> */}
-                  {/* <MenuItem>Your Servers</MenuItem> */}
                   {user?.email && (
                     <MenuItem>
                       <Link to="/profile">Profile</Link>
@@ -127,7 +105,6 @@ export default function Header() {
                   <MenuItem>
                     <Link to="/aboutus">About Us</Link>
                   </MenuItem>
-                  {/* <MenuItem>Logout</MenuItem> */}
                 </MenuList>
               </Menu>
             </Stack>

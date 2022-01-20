@@ -1,7 +1,6 @@
 import { Flex, Box, Badge, Image, Button } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-//import { StarIcon } from '@chakra-ui/icons';
 import { deleteTaskById } from '../../services/services';
 import { deleteUnacceptedOffers } from '../../services/services';
 
@@ -9,11 +8,9 @@ export default function ProfileTaskBox({ task }) {
   const removeTask = async (taskID) => {
     try {
       const response = await deleteTaskById(taskID);
-      console.log(response);
       window.location.reload();
     } catch (err) {
       alert('Offers pending, unable to remove');
-      //can we delete offers with it?
     }
   };
   
@@ -21,7 +18,6 @@ export default function ProfileTaskBox({ task }) {
       const deleteBadOffers = async () =>{
         if(task.accepted_offer === true) {
         const response = await deleteUnacceptedOffers(task.id)
-        console.log('response', response)
         }
     }
   
@@ -29,7 +25,7 @@ export default function ProfileTaskBox({ task }) {
 
   return (
     <>
-    
+    <Flex align={'center'} justify={'center'}>
       <Box
         maxW="sm"
         minW="sm"
@@ -53,6 +49,8 @@ export default function ProfileTaskBox({ task }) {
               Task Name: {task.name}
             </Badge>
             <Box
+              height='100'
+              width='500'
               color="gray.500"
               fontWeight="semibold"
               letterSpacing="wide"
@@ -97,6 +95,7 @@ export default function ProfileTaskBox({ task }) {
           </Box>
         </Box>
       </Box>
+      </Flex>
       
     </>
   );

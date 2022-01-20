@@ -3,10 +3,8 @@ import {
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
   Flex,
   Heading,
-  Link,
   Stack,
   Image,
 } from '@chakra-ui/react';
@@ -28,35 +26,10 @@ export default function AddTaskForm() {
       description,
       imageURL
     );
-    console.log(response);
     window.location.reload();
   };
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <FormControl m="10">
-    //     <FormLabel htmlFor="taskname">Task Name</FormLabel>
-    //     <Input
-    //       id="taskname"
-    //       value={taskname}
-    //       onChange={(e) => setTaskName(e.target.value)}
-    //     />
-    //     <FormLabel htmlFor="description">Description</FormLabel>
-    //     <Input
-    //       id="description"
-    //       value={description}
-    //       onChange={(e) => setDescription(e.target.value)}
-    //     />
-    //     <FormLabel htmlFor="date">Image-URL</FormLabel>
-    //     <Input
-    //       id="imageURL"
-    //       value={imageURL}
-    //       onChange={(e) => setImageURL(e.target.value)}
-    //     />
-    //   </FormControl>
-    //   <Button type="submit">Submit Task</Button>
-    // </form>
-
     <Stack minH={'20vh'} direction={{ base: 'column', md: 'row' }}>
       <Flex p={8} flex={1} align={'center'} justify={'center'}>
         <Stack spacing={4} w={'full'} maxW={'md'}>
@@ -92,8 +65,6 @@ export default function AddTaskForm() {
                 align={'start'}
                 justify={'space-between'}
               >
-                {/* <Checkbox>Remember me</Checkbox>
-                <Link color={'blue.500'}>Forgot password?</Link> */}
               </Stack>
               <Button type="submit" colorScheme={'blue'} variant={'solid'}>
                 Create Task

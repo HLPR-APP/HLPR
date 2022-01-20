@@ -2,18 +2,13 @@ import { useState } from 'react';
 import { signInUser } from '../../services/users.js';
 import { useUser } from '../../context/UserContext.jsx';
 import { useHistory, Link } from 'react-router-dom';
-// import { getTasksByUser } from '../../services/services.js';
-// import { getTasksByEmail } from '../../services/services.js';
-// import { getTaskById } from '../../services/services.js';
 import {
   Flex,
   Box,
   FormControl,
   FormLabel,
   Input,
-  Checkbox,
   Stack,
-  //   Link,
   Button,
   Heading,
   Text,
@@ -30,11 +25,7 @@ export default function Login() {
     try{
     e.preventDefault();
     const userIn = await signInUser(email, pw);
-    console.log(userIn);
     auth.setUser({ id: userIn.id, email: userIn.email });
-    console.log(auth.user);
-
-    console.log('hello');
     history.push('/TaskList');
     } catch (error) {
       alert(error.message)
@@ -42,36 +33,6 @@ export default function Login() {
   };
 
   return (
-    // <form onSubmit={handleSubmit}>
-    //   <FormControl>
-    //     <FormLabel htmlFor="email">
-    //       Email
-    //       <Input
-    //         id="email"
-    //         type="email"
-    //         value={email}
-    //         onChange={(e) => setEmail(e.target.value)}
-    //       />
-    //     </FormLabel>
-    //     <FormLabel htmlFor="password">
-    //       Password
-    //       <Input
-    //         id="password"
-    //         type="password"
-    //         value={pw}
-    //         onChange={(e) => setPW(e.target.value)}
-    //       />
-    //     </FormLabel>
-    //     <Button type="submit">Submit</Button>
-    //     <p>
-    //       Don't have an account?
-    //       <Button>
-    //         <a href="/signup">Create Account </a>
-    //       </Button>
-    //     </p>
-    //   </FormControl>
-    // </form>
-
     <Flex
       minH={'100vh'}
       align={'center'}
@@ -81,9 +42,6 @@ export default function Login() {
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'}>Sign in to your account</Heading>
-          {/* <Text fontSize={'lg'} color={'gray.600'}>
-            to enjoy all of our cool <Link color={'blue.400'}>features</Link> ✌️
-          </Text> */}
         </Stack>
         <Box
           rounded={'lg'}
@@ -121,8 +79,6 @@ export default function Login() {
                   align={'start'}
                   justify={'space-between'}
                 >
-                  {/* <Checkbox>Remember me</Checkbox>
-                  <Link color={'blue.400'}>Forgot password?</Link> */}
                 </Stack>
                 <Button
                   bg={'blue.400'}
