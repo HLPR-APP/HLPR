@@ -1,4 +1,4 @@
-import { Flex } from '@chakra-ui/react';
+import { Flex, Center, Badge } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import AddTaskForm from '../../components/AddTaskForm/AddTaskForm.jsx';
 import { getTasksByUser } from '../../services/services.js';
@@ -40,19 +40,45 @@ export default function Profile() {
       <AddTaskForm />
       <br />
       <br />
-      Your Offers:
-      {offers.map((offer) => (
-        <AcceptOfferBox key={offer.id} offer={offer} />
-      ))}
+      <Center>
+        <Badge fontSize="md" colorScheme="gray">
+          OFFERS ON MY TASKS:
+        </Badge>
+      </Center>
+      <Center>
+        <Flex direction="rows" p="10">
+          {offers.map((offer) => (
+            <AcceptOfferBox key={offer.id} offer={offer} />
+          ))}
+        </Flex>
+      </Center>
       <br />
-      Your Tasks...
-      {userTasks.map((task) => (
-        <ProfileTaskBox key={task.id} task={task} />
-      ))}
-      <div>Offers you have made...</div>
-      {offered.map((offer) => (
-        <OfferBox key={offer.id} offer={offer} />
-      ))}
+
+      <Center>
+        <Badge fontSize="md" colorScheme="gray">
+          YOUR TASKS:
+        </Badge>
+      </Center>
+
+      <Center>
+        <Flex direction="rows" pl="10" p="10">
+          {userTasks.map((task) => (
+            <ProfileTaskBox key={task.id} task={task} />
+          ))}
+        </Flex>
+      </Center>
+      <Center>
+        <Badge fontSize="md" colorScheme="gray">
+          OFFERS YOU HAVE MADE:
+        </Badge>
+      </Center>
+      <Center>
+        <Flex direction="rows" pl="10" p="10">
+          {offered.map((offer) => (
+            <OfferBox key={offer.id} offer={offer} />
+          ))}
+        </Flex>
+      </Center>
     </>
   );
 }

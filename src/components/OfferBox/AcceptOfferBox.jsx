@@ -1,4 +1,4 @@
-import { Box, Badge, Image, Button, Flex } from '@chakra-ui/react';
+import { Box, Badge, Image, Button, Flex, Center } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { updateOfferAccepted } from '../../services/services';
 import { updateAcceptTask } from '../../services/services';
@@ -30,39 +30,51 @@ export default function AcceptOfferBox({ offer }) {
           overflow="hidden"
           fit="cover"
         >
-          <Badge borderRadius="full" px="2" colorScheme="teal" fontSize="md">
+          <Badge
+            borderRadius="full"
+            px="2"
+            colorScheme="teal"
+            fontSize="md"
+            mt="4"
+            ml="2"
+          >
             {offer.Tasks2.name}
           </Badge>
           <Box p="6">
             <Box display="flex" alignItems="baseline">
-              <Badge borderRadius="full" px="2" colorScheme="teal">
-                OfferedBy:{<br />}
+              <Badge borderRadius="full" px="2" colorScheme="teal" mb="2">
+                Offered By:{<br />}
                 {offer.offered_by}
               </Badge>
               <Box
                 color="gray.500"
                 fontWeight="semibold"
                 letterSpacing="wide"
-                fontSize="sm"
+                fontSize="md"
                 textTransform="uppercase"
-                ml="2"
+                ml="10"
               >
-                Price: {offer.price}
+                Price: ${offer.price}
               </Box>
             </Box>
             {!offer.accepted ? (
-              <Button
-                onClick={() => handleAcceptOffer(offer.Tasks2.id, offer.id)}
-                size="md"
-                margin="2"
-                colorScheme="blue"
-              >
-                Accept Offer
-              </Button>
+              <Center>
+                <Button
+                  onClick={() => handleAcceptOffer(offer.Tasks2.id, offer.id)}
+                  size="md"
+                  margin="2"
+                  colorScheme="blue"
+                  mt="2"
+                >
+                  Accept Offer
+                </Button>
+              </Center>
             ) : (
-              <Badge borderRadius="full" px="2" colorScheme="teal">
-                Offer Accepted
-              </Badge>
+              <Center>
+                <Button size="md" margin="2" colorScheme="green" px="2" mt="2">
+                  Offer Accepted
+                </Button>
+              </Center>
             )}
             <Box>
               <Box as="span" color="gray.600" fontSize="sm"></Box>

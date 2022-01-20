@@ -1,4 +1,4 @@
-import { Box, Badge, Image, Button } from '@chakra-ui/react';
+import { Box, Badge, Image, Button, Center } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { deleteOfferByID } from '../../services/services';
 
@@ -12,20 +12,27 @@ export default function UserOfferBox({ offer }) {
   return (
     <>
       <Box
-        maxW="sm"
+        maxW="md"
         minW="sm"
         borderWidth="10px"
         borderRadius="lg"
         overflow="hidden"
         fit="cover"
       >
-        <Badge borderRadius="full" px="2" colorScheme="teal" fontSize="md">
+        <Badge
+          borderRadius="full"
+          px="2"
+          colorScheme="teal"
+          fontSize="md"
+          mt="2"
+          ml="3"
+        >
           {offer.Tasks2.name}
         </Badge>
         <Box p="6">
           <Box display="flex" alignItems="baseline">
             <Badge borderRadius="full" px="2" colorScheme="teal">
-              OfferedBy:{<br />}
+              Offered By:{<br />}
               {offer.offered_by}
             </Badge>
             <Box
@@ -36,7 +43,7 @@ export default function UserOfferBox({ offer }) {
               textTransform="uppercase"
               ml="2"
             >
-              Price: {offer.price}
+              Price: ${offer.price}
             </Box>
             {offer.accepted ? (
               <Box
@@ -62,14 +69,16 @@ export default function UserOfferBox({ offer }) {
               </Box>
             )}
           </Box>
-          <Button
-            onClick={() => removeOffer(offer.id)}
-            size="sm"
-            margin="2"
-            colorScheme="blue"
-          >
-            Remove Offer
-          </Button>
+          <Center>
+            <Button
+              onClick={() => removeOffer(offer.id)}
+              size="sm"
+              margin="2"
+              colorScheme="blue"
+            >
+              Remove Offer
+            </Button>
+          </Center>
           <Box>
             <Box as="span" color="gray.600" fontSize="sm"></Box>
           </Box>

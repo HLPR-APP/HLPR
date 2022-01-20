@@ -4,19 +4,21 @@ import {
   FormControl,
   FormLabel,
   Input,
+  Box,
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useUser } from '../../context/UserContext.jsx';
 import { useParams } from 'react-router-dom';
 import { addOffer, getTaskById } from '../../services/services.js';
 import TaskBox from '../../components/TaskBox/TaskBox';
+import { useHistory } from 'react-router-dom';
 
 export default function TaskDetail() {
   const { id } = useParams();
   const [task, setTask] = useState(null);
   const [loading, setLoading] = useState(true);
   const [price, setPrice] = useState('');
-
+  const history = useHistory();
   const auth = useUser();
 
   useEffect(() => {
@@ -37,30 +39,48 @@ export default function TaskDetail() {
       price
     );
     console.log(response);
-    window.location.reload();
+    history.push('/profile');
   };
 
   return (
     <>
       {loading ? <h3>Loading</h3> : <TaskBox task={task} />}
       <Center>
-        <form onSubmit={handleSubmit}>
-          <FormControl m="10">
-            <FormLabel htmlFor="price">Price</FormLabel>
-            <Input
-              id="price"
-              value={price}
-              onChange={(e) => setPrice(e.target.value)}
-            />
-          </FormControl>
-          <Button ml="90" type="submit">
-            Add Offer
-          </Button>{' '}
-        </form>
+        <Box
+          m="2"
+          maxW="sm"
+          minW="sm"
+          borderWidth="10px"
+          borderRadius="lg"
+          overflow="hidden"
+          fit="cover"
+        >
+          <Center>
+            <form onSubmit={handleSubmit}>
+              {/* <FormControl> */}
+              <Center>
+                <FormLabel htmlFor="price">Price $</FormLabel>
+              </Center>
+              <Input
+                id="price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+              {/* </FormControl> */}
+              <Center>
+                <Button type="submit" mb="5" mt="2">
+                  Add Offer
+                </Button>
+              </Center>
+              <Center>
+                <Button mb="2">
+                  <a href="/tasklist"> Back to Tasks List </a>
+                </Button>
+              </Center>
+            </form>
+          </Center>
+        </Box>
       </Center>
-      <Button>
-        <a href="/tasklist"> Back to Tasks List </a>
-      </Button>
     </>
   );
 }
