@@ -1,4 +1,4 @@
-import { Flex, Center, Badge, Button, HStack } from '@chakra-ui/react';
+import { Flex, Center, Badge } from '@chakra-ui/react';
 import { useState, useEffect } from 'react';
 import AddTaskForm from '../../components/AddTaskForm/AddTaskForm.jsx';
 import { getTasksByEmail } from '../../services/services.js';
@@ -23,7 +23,7 @@ export default function Profile() {
       setOffers(returnedOffers);
       const userOffers = await getOffersByUser(auth.user.email);
       setOffered(userOffers);
-    }
+    };
     onMount();
   }, []);
 
@@ -38,13 +38,17 @@ export default function Profile() {
         </Badge>
       </Center>
       <Center>
-      
-        <Flex align={'center'} justify={'center'} direction="rows" p="10" wrap='wrap'>
+        <Flex
+          align={'center'}
+          justify={'center'}
+          direction="rows"
+          p="10"
+          wrap="wrap"
+        >
           {offers.map((offer) => (
             <AcceptOfferBox key={offer.id} offer={offer} />
           ))}
         </Flex>
-        
       </Center>
       <br />
 
@@ -55,26 +59,39 @@ export default function Profile() {
       </Center>
 
       <Center>
-        <Flex align={'center'} justify={'center'} direction="rows" pl="10" p="10" wrap='wrap'>
+        <Flex
+          align={'center'}
+          justify={'center'}
+          direction="rows"
+          pl="10"
+          p="10"
+          wrap="wrap"
+        >
           {userTasks.map((task) => (
             <ProfileTaskBox key={task.id} task={task} />
           ))}
         </Flex>
       </Center>
-       <Center>
+      <Center>
         <Badge fontSize="md" colorScheme="gray">
           OFFERS {auth.user.email} HAS MADE:
         </Badge>
       </Center>
-     
+
       <Center>
-        <Flex align={'center'} justify={'center'} direction="rows" pl="10" p="10" wrap='wrap'>
+        <Flex
+          align={'center'}
+          justify={'center'}
+          direction="rows"
+          pl="10"
+          p="10"
+          wrap="wrap"
+        >
           {offered.map((offer) => (
             <OfferBox key={offer.id} offer={offer} />
           ))}
         </Flex>
       </Center>
-          
     </>
   );
 }

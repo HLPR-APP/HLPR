@@ -1,12 +1,6 @@
-import {
-  Box,
-  Badge,
-  Image,
-  Button,
-  Flex,
-  Spacer,
-} from '@chakra-ui/react';
+import { Box, Badge, Image, Button, Flex, Spacer } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
+import styles from './TaskBox.css';
 
 export default function TaskBox({ task }) {
   return (
@@ -22,6 +16,7 @@ export default function TaskBox({ task }) {
           fit="cover"
         >
           <Image
+            className={styles.taskImg}
             minW="sm"
             align="top center"
             height="350"
