@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { deleteTaskById } from '../../services/services';
 import { deleteUnacceptedOffers } from '../../services/services';
+import styles from './ProfileTaskBox.css';
 
 export default function ProfileTaskBox({ task }) {
   const removeTask = async (taskID) => {
@@ -37,6 +38,7 @@ export default function ProfileTaskBox({ task }) {
           m="2"
         >
           <Image
+            className={styles.taskImg}
             minW="sm"
             align="top center"
             h="350"
