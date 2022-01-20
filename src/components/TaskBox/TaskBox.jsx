@@ -51,9 +51,11 @@ export default function TaskBox({ task }) {
                 Description: {task.description}
               </Box>
             </Box>
-            {task.accepted_offer && <Badge borderRadius="full" px="2" colorScheme="teal">
+            {task.accepted_offer && (
+              <Badge borderRadius="full" px="2" colorScheme="teal">
                 Offer Accepted
-              </Badge>}
+              </Badge>
+            )}
             <Button size="xs" margin="2" colorScheme="blue">
               <Link to={`/taskdetail/${task.id}`}>
                 <Spacer />
