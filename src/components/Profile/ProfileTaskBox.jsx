@@ -1,4 +1,4 @@
-import { Box, Badge, Image, Button } from '@chakra-ui/react';
+import { Flex, Box, Badge, Image, Button } from '@chakra-ui/react';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 //import { StarIcon } from '@chakra-ui/icons';
@@ -29,6 +29,7 @@ export default function ProfileTaskBox({ task }) {
 
   return (
     <>
+    
       <Box
         maxW="sm"
         minW="sm"
@@ -36,6 +37,7 @@ export default function ProfileTaskBox({ task }) {
         borderRadius="lg"
         overflow="hidden"
         fit="cover"
+        m="2"
       >
         <Image
           minW="sm"
@@ -95,6 +97,7 @@ export default function ProfileTaskBox({ task }) {
           </Box>
         </Box>
       </Box>
+      
     </>
   );
 }

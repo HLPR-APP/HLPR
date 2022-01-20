@@ -120,6 +120,9 @@ export default function Header() {
                       <Link to="/profile">Profile</Link>
                     </MenuItem>
                   )}
+                  <MenuItem>
+                      <Link to="/tasklist">Task List</Link>
+                    </MenuItem>
                   <MenuDivider />
                   <MenuItem>
                     <Link to="/aboutus">About Us</Link>

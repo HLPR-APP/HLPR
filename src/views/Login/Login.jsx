@@ -27,6 +27,7 @@ export default function Login() {
   const history = useHistory();
 
   const handleSubmit = async (e) => {
+    try{
     e.preventDefault();
     const userIn = await signInUser(email, pw);
     console.log(userIn);
@@ -35,6 +36,9 @@ export default function Login() {
 
     console.log('hello');
     history.push('/TaskList');
+    } catch (error) {
+      alert(error.message)
+    }
   };
 
   return (
