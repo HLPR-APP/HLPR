@@ -27,7 +27,7 @@ To Run locally: </br>
   <li> Run npm i </li>
   <li> Run npm i react-router-dom@5 </li>
   <li> Run npm i --save @supabase/supabase-js </li>
-  <li> Run npm install --save @chakra-ui/react </li>
+  <li> Run npm i --save @chakra-ui/react </li>
   <li> Run npm i react-slick --save</li>
   <li> Run npm i react-icons --save</li>
   <li> Run npm start </li> 
