@@ -1,5 +1,5 @@
 ## HLPR
-<kbd align="center"> Amit Sheth, Marvin Lambert, and Estefani Baughman </kbd> <br>
+# Amit Sheth, Marvin Lambert, and Estefani Baughman <br>
 
 <img align="center" alt="Logo" style= "width: 100%, height: 50%;"  src= https://github.com/HLPR-APP/HLPR/blob/main/public/volodymyr-hryshchenko-KZocXyI3kRo-unsplash.jpg />
 
