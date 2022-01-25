@@ -4,6 +4,10 @@ import { deleteOfferByID } from '../../services/services';
 export default function UserOfferBox({ offer }) {
   const removeOffer = async (offerID) => {
     const response = await deleteOfferByID(offerID);
+    // Same thing here.
+    // window.location.reload() is somewhat of a "code smell"
+    // for single page applications since all of the
+    // state is wiped out on refresh.
     window.location.reload();
   };
 

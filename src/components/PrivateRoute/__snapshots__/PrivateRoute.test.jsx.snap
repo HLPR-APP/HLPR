@@ -1,3 +1,4 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+// Is an empty div what you expected to happen?
 exports[`should render Private Route 1`] = `<div />`;

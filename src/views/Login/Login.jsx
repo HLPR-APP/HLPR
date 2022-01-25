@@ -34,19 +34,19 @@ export default function Login() {
 
   return (
     <Flex
-      minH={'100vh'}
-      align={'center'}
-      justify={'center'}
+      minH="100vh"
+      align="center"
+      justify="center"
       bg={useColorModeValue('gray.50', 'gray.800')}
     >
-      <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
-        <Stack align={'center'}>
-          <Heading fontSize={'4xl'}>Sign in to your account</Heading>
+      <Stack spacing={8} mx="auto" maxW="lg" py={12} px={6}>
+        <Stack align="center">
+          <Heading fontSize="4xl">Sign in to your account</Heading>
         </Stack>
         <Box
-          rounded={'lg'}
+          rounded="lg"
           bg={useColorModeValue('white', 'gray.700')}
-          boxShadow={'lg'}
+          boxShadow="lg"
           p={8}
         >
           <Stack spacing={4}>
@@ -76,13 +76,13 @@ export default function Login() {
               <Stack spacing={10}>
                 <Stack
                   direction={{ base: 'column', sm: 'row' }}
-                  align={'start'}
-                  justify={'space-between'}
+                  align="start"
+                  justify="space-between"
                 >
                 </Stack>
                 <Button
-                  bg={'blue.400'}
-                  color={'white'}
+                  bg="blue.400"
+                  color="white"
                   _hover={{
                     bg: 'blue.500',
                   }}
@@ -91,9 +91,9 @@ export default function Login() {
                   Sign in
                 </Button>
                 <Stack pt={1}>
-                  <Text align={'center'}>
-                    Need an account?{' '}
-                    <Button color={'blue.400'}>
+                  <Text align="center">
+                    Need an account?" "
+                    <Button color="blue.400">
                       <Link to="/signup">Sign Up</Link>
                     </Button>
                   </Text>

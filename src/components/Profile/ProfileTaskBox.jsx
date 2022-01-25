@@ -9,6 +9,7 @@ export default function ProfileTaskBox({ task }) {
   const removeTask = async (taskID) => {
     try {
       const response = await deleteTaskById(taskID);
+      // Same thing here:
       window.location.reload();
     } catch (err) {
       alert('Offers pending, unable to remove');

@@ -30,7 +30,8 @@ export default function Header() {
     history.push('/');
   };
 
-  const loggedin = user ? true : false;
+  // You can use !! to convert a value into a boolean based on its truthiness
+  const loggedin = !!user;
 
   const loggedInDiv = (
     <Box>

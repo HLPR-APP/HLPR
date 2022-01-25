@@ -106,7 +106,7 @@ export default function CaptionCarousel() {
         {cards.map((card, index) => (
           <Box
             key={index}
-            height={'6xl'}
+            height="6xl"
             position="relative"
             backgroundPosition="center"
             backgroundRepeat="no-repeat"
