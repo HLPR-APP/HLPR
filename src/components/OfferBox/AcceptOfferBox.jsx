@@ -9,6 +9,9 @@ export default function AcceptOfferBox({ offer }) {
     try {
       const response = await updateAcceptTask(auth.user.email, taskID);
       const returned = await updateOfferAccepted(offerID);
+      // Same as the AddTask form, you could remove this
+      // reload with an `onOfferAccepted` prop that refetches
+      // the tasks & offers
       window.location.reload();
     } catch (err) {
       console.log(err.message);

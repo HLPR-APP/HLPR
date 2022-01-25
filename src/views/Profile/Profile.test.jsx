@@ -50,5 +50,7 @@ describe('Task', () => {
     screen.getByText('HLPR');
     await screen.findByText('Create A Task');
     await screen.findByText('Task Name');
+    // You should add a test to check that the response you're mocking out above
+    // appears on the page somewhere
   });
 });

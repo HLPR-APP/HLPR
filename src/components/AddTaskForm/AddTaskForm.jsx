@@ -20,20 +20,27 @@ export default function AddTaskForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await AddTask(
-      auth.user.email,
-      taskname,
-      description,
-      imageURL
-    );
+    if (auth.user) {
+      const response = await AddTask(
+        auth.user.email,
+        taskname,
+        description,
+        imageURL
+      );
+    }
+
+    // Instead of reloading and wiping out all your app's state,
+    // you could have AddTaskForm take an "onSubmit" prop
+    // that's a function which would be called after submission.
+    // That function could instead refetch the latest tasks.
     window.location.reload();
   };
 
   return (
-    <Stack minH={'20vh'} direction={{ base: 'column', md: 'row' }}>
-      <Flex p={8} flex={1} align={'center'} justify={'center'}>
-        <Stack spacing={4} w={'full'} maxW={'md'}>
-          <Heading fontSize={'2xl'}>Create A Task</Heading>
+    <Stack minH="20vh" direction={{ base: 'column', md: 'row' }}>
+      <Flex p={8} flex={1} align="center" justify="center">
+        <Stack spacing={4} w="full" maxW="md">
+          <Heading fontSize="2xl">Create A Task</Heading>
           <form onSubmit={handleSubmit}>
             <FormControl>
               <FormLabel htmlFor="taskname">Task Name</FormLabel>
@@ -62,11 +69,11 @@ export default function AddTaskForm() {
             <Stack spacing={6}>
               <Stack
                 direction={{ base: 'column', sm: 'row' }}
-                align={'start'}
-                justify={'space-between'}
+                align="start"
+                justify="space-between"
               >
               </Stack>
-              <Button type="submit" colorScheme={'blue'} variant={'solid'}>
+              <Button type="submit" colorScheme="blue" variant="solid">
                 Create Task
               </Button>
             </Stack>
@@ -79,8 +86,8 @@ export default function AddTaskForm() {
           pt="5"
           h="400"
           w="400"
-          alt={'Login Image'}
-          objectFit={'cover'}
+          alt="Login Image"
+          objectFit="cover"
           src={
             'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80'
           }
